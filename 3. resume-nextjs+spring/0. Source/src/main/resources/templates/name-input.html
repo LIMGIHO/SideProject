@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>지원자 확인</title>
+    <script>
+        // 페이지 로드 후 input에 포커스 설정
+        window.onload = function() {
+            document.getElementById("nameInput").focus();
+        };
+    </script>
+</head>
+<body>
+    <h1>지원자 이름을 입력해 주세요</h1>
+    <form action="/validate-name" method="post">
+        <input id="nameInput" type="text" name="name" placeholder="이름 입력" required>
+        <button type="submit">확인</button>
+    </form>
+    <!-- 에러 메시지 표시 -->
+    <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+</body>
+</html>
